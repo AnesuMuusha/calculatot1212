@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function App() {
   const [calc, setCalc] = useState("");
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState("0");
 
   const ops = ["/", "*", "+", "-", "."];
 
@@ -49,6 +49,14 @@ function App() {
     setCalc(value)
 
  };
+ const btnClearHandler = () => {
+  if(calc === ""){
+    return;
+  }
+  const value = calc.slice(0,-100);
+  setCalc(value)
+  setResult()
+ };
 
   return (
     <div className="App">
@@ -65,6 +73,7 @@ function App() {
           <button onClick={() => updateCalc("-")}>-</button>
 
           <button onClick={deleteLast}>DEL</button>
+          <button onClick={btnClearHandler}>Clear</button>
         </div>
         <div className="digits">
           {createDigits()}
