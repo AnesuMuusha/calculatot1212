@@ -35,7 +35,7 @@ function App() {
     return digits;
   };
 
-  const calculate =()=>{
+  const calculateHandler =()=>{
     // eslint-disable-next-line no-eval
     setCalc (eval(calc).toString());
 
@@ -81,7 +81,7 @@ function App() {
           <button onClick={() => updateCalc("0")}>0</button>
           <button onClick={() => updateCalc(".")}>.</button>
 
-          <button onClick={calculate}>=</button>
+          <button onClick={calculateHandler}>=</button>
         </div>
       </div>
     </div>
